@@ -29,29 +29,39 @@ function AstronautBios(astronaut) {
 
 // Function should render all astronaut bios
 function renderBios(data) {
+
+  let astronautArray = [];
   
   const root = document.getElementById('root');
   const container = 
-    // <div className='container'>
+    <div className='container'>
+      {astronautArray}
+    </div>
+
+    for (let i = 0; i < data.length; i++) {
+      
+      astronautArray.push(AstronautBios(data[i]));
+    }
+
+     // <div className='container'>
     //   for (let i = 0; i < data.length; i++) {
-    //     {AstronautBios(data[0])}
+    //     {AstronautBios(data[i])}
     //   }
     // </div>
-
     // <div className='container'>
     //   {AstronautBios(data.map(function(name, index){return name, index;}))}
     // </div>
         //I know this way isn't right, but I can't figure out how where to put the loop where it doens't break react.
-        <div className='container'>
+    //     <div className='container'>
       
-        {AstronautBios(data[0])}
-        {AstronautBios(data[1])}
-        {AstronautBios(data[3])}
-        {AstronautBios(data[4])}
-        {AstronautBios(data[5])}
-        {AstronautBios(data[6])}
+    //     {AstronautBios(data[0])}
+    //     {AstronautBios(data[1])}
+    //     {AstronautBios(data[3])}
+    //     {AstronautBios(data[4])}
+    //     {AstronautBios(data[5])}
+    //     {AstronautBios(data[6])}
 
-    </div>
+    // </div>
   
   ReactDOM.render( container, root );
   //The AstronautBios component should be repeated to display bios for all 
